@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
@@ -28,7 +28,7 @@ const ScrollToTop: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <FavoritesProvider>
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-dark-950 text-slate-100 selection:bg-violet-600 selection:text-white">
           <Navbar />
@@ -46,7 +46,7 @@ export const App: React.FC = () => {
           </main>
           <Footer />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </FavoritesProvider>
   );
 };
